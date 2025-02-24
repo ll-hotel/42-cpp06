@@ -39,3 +39,15 @@ void identify(Base *p)
                 std::cout << 'C';
         std::cout << std::endl;
 }
+
+void identify(Base &p)
+{
+        std::cout << p << " is a reference of an instance of ";
+        if (dynamic_cast<A *>(&p) != 0)
+                std::cout << 'A';
+        else if (dynamic_cast<B *>(&p) != 0)
+                std::cout << 'B';
+        else if (dynamic_cast<C *>(&p) != 0)
+                std::cout << 'C';
+        std::cout << std::endl;
+}
