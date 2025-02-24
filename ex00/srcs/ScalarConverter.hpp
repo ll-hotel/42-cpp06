@@ -2,13 +2,14 @@
 #define SCALAR_CONVERTER_HPP
 #include <string>
 
-class ScalarConverter {
+class ScalarConverter
+{
 public:
-	ScalarConverter(void);
-	ScalarConverter(const ScalarConverter&);
-	virtual ~ScalarConverter(void) = 0;
+        ScalarConverter(void);
+        ScalarConverter(const ScalarConverter &);
+        virtual ~ScalarConverter(void) = 0;
 
-	static void	convert(const std::string&);
+        static void convert(const std::string &);
 };
 
 #endif
