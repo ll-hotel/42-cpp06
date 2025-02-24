@@ -10,9 +10,9 @@ OBJS_DIR = .obj/
 INCLUDES = .
 
 SRCS = ScalarConverter.cpp \
-	   check_type.cpp \
-	   strtod.cpp \
-	   display.cpp \
+	   is_type.cpp \
+	   str_to_double.cpp \
+	   display_value.cpp \
 	   main.cpp
 
 OBJS = ${SRCS:%.cpp=${OBJS_DIR}%.o}

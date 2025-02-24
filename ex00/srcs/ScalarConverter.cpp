@@ -8,18 +8,22 @@ ScalarConverter::ScalarConverter(void)
 ScalarConverter::ScalarConverter(const ScalarConverter&)
 {}
 
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter &)
+{
+	return *this;
+}
+
 void ScalarConverter::convert(const std::string &str)
 {
-	const int type = check_type(str);
 	double value;
 
-	if (type == 4) {
+	if (is_double(str) || is_float(str) || is_int(str)) {
+		value = str_to_double(str);
+	} else if (is_char(str)) {
+		value = static_cast<double>(str[0]);
+	} else {
 		std::cerr << "Unrecognized value." << std::endl;
 		return;
 	}
-	if (type == 3)
-		value = static_cast<double>(str[0]);
-	else
-		value = strtod(str);
 	display_value(value);
 }

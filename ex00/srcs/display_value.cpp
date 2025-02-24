@@ -11,15 +11,10 @@ static void display_double(double v);
 
 void display_value(double v)
 {
-	static void (*const display[])(double) = {
-		display_char,
-		display_int,
-		display_float,
-		display_double,
-	};
-
-	for (std::size_t i = 0; i < 4; i += 1)
-		display[i](v);
+	display_char(v);
+	display_int(v);
+	display_float(v);
+	display_double(v);
 }
 
 static void display_char(double v)
@@ -60,7 +55,7 @@ static void display_float(double v)
 static void display_double(double v)
 {
 	std::cout << "double: " << v;
-	if (std::floor(v) == v)
+	if (!std::isinf(v) && !std::isnan(v) && std::floor(v) == v)
 		std::cout << ".0";
 	std::cout << std::endl;
 }

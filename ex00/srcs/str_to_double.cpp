@@ -2,7 +2,7 @@
 #include <sstream>
 #include <cmath>
 
-double strtod(const std::string &str)
+double str_to_double(const std::string &str)
 {
 	std::stringstream ss;
 	double d;
